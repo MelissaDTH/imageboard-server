@@ -3,6 +3,7 @@ const app = express()
 
 // For testing
 const db = require('./db')
+const Image = require('./image/model')
 
 //Initial
 const port = process.env.PORT || 4000;
