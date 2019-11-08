@@ -11,10 +11,10 @@ router.get("/image", (req, res, next) => {
       .catch(next);
   });
   
-//   router.post("/image", (req, res, next) => {
-//     Player.create(req.body) //sequelize will use this to populate row's fields
-//       .then(player => res.json(player))
-//       .catch(next);
-//   });
+  router.post("/image", (req, res, next) => {
+    Image.create(req.body) //sequelize will use this to populate row's fields
+      .then(image => res.json(image))
+      .catch(next);
+  });
   
 module.exports = router

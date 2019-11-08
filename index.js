@@ -1,7 +1,14 @@
 const express = require('express');
 const app = express()
 
-// For testing
+// Middlewares
+const bodyParser = require("body-parser");
+const bodyParserMiddleWare = bodyParser.json();
+
+const cors = require("cors");
+const corsMiddleWare = cors();
+
+// Models & DB
 const db = require('./db')
 const Image = require('./image/model')
 
@@ -12,4 +19,7 @@ const imageRouter = require('./image/router')
 const port = process.env.PORT || 4000;
 app.listen(port, () => console.log(`This app is listening on port ${port}!`));
 
-app.use(imageRouter)
+app
+    .use(corsMiddleWare)
+    .use(bodyParserMiddleWare)
+    .use(imageRouter)
