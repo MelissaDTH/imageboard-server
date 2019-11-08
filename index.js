@@ -14,6 +14,7 @@ const Image = require('./image/model')
 
 // Routing
 const imageRouter = require('./image/router')
+const authenticationRouter = require('./server/auth/router')
 
 //Initial
 const port = process.env.PORT || 4000;
@@ -23,3 +24,4 @@ app
     .use(corsMiddleWare)
     .use(bodyParserMiddleWare)
     .use(imageRouter)
+    .use(authenticationRouter)
