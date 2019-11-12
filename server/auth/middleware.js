@@ -11,7 +11,7 @@ function auth(req, res, next) {
         .then(user => {
           if (!user) return next('User does not exist')
 
-          req.user = user
+          req.user = user // de user is een nieuwe key die aangemaakt wordt
           next()
         })
         .catch(next)

@@ -4,6 +4,7 @@ const bcrypt = require('bcrypt')
 
 const router = new Router();
   
+// at this endpoint: people can sign up
   router.post("/user", (req, res, next) => {
     const user = {
         email: req.body.email,
